@@ -1,0 +1,30 @@
+.rule-box {
+    background-color: rgb(227, 227, 227);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.add-rule-field-btn {
+    float: right;
+    padding: 3px 8px 3px 8px;
+    margin: 0 2% 0 0;
+}
+
+.inp-fld-1 {
+    width: 20%;
+    margin: 0 3% 1% 0;
+    height: 2rem;
+    padding: 0 0 0 5px;
+}
+
+.inp-fld-3 {
+    width: 48%;
+    margin: 0 3% 1% 0;
+    height: 2rem;
+    padding: 0 0 0 5px;
+}
+
+.add-rule-btn {
+    padding: 3px 8px 3px 8px;
+
+}
