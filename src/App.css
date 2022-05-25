@@ -1,4 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
 
 * {
   box-sizing: border-box;

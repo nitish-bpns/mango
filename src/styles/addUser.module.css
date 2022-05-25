@@ -1,6 +1,7 @@
 .launchBtn {
     font-size: 16px;
     padding: 5px 8px 5px 8px;
+    float: right !important;
 }
 
 .mClose {
@@ -14,12 +15,19 @@
 
 .mHead {
     display: inline;
+    color: grey;
+}
+
+.mHead2 {
+    display: inline;
+    color: grey;
+    margin: 0 0 0 1%;
 }
 
 .formDiv {
     display: flex;
     flex-wrap: wrap;
-    width: 22rem;
+    width: 30rem;
     margin: 2% 0 0 0;
 }
 
@@ -39,4 +47,42 @@
     /* float: right; */
     font-size: 15px;
     padding: 2px 13px;
+}
+
+.cBox1 {
+    width: 80%;
+    margin: 0 0 0 2rem;
+}
+
+.defVar {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.varOne {
+    width: 40%;
+    margin: 0 2.5% 0 0%;
+}
+
+.varTwo {
+    width: 40%;
+    margin: 0 2.5% 0 0%;
+}
+
+.onBtn {
+    width: 4%;
+    margin: 2.5% 0 0 1.5%;
+    border: 1px grey;
+    padding: 0 1.75rem 0 0;
+}
+
+.happen {
+    margin: 4% 0 0 2%;
+}
+
+.offBtn {
+    width: 4%;
+    margin: 2.5% 1% 0 1.5%;
+    border: 1px grey;
+    padding: 0 1.75rem 0 0;
 }

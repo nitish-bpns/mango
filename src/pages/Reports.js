@@ -3,13 +3,8 @@ import './../styles/reports.css'
 import RuleNewAdd from '../components/RuleNewAdd';
 import IncludedUsers from '../components/TargetUsers/IncludedUsers';
 
-function Reports() {
 
-    function duplicate() {
-        const div = duplicate("div");
-        div.id = "duplicater";
-        div.appendChild(duplicate("duplicater"));
-    };
+function Reports() {
 
     return (
         <div className='reports'>

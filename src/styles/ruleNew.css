@@ -23,6 +23,16 @@
     margin: 0 0% 0 1%;
 }
 
+.add-rule-btn-boo {
+    padding: 3px 8px 3px 8px;
+}
+
+.rem-rule-btn-boo {
+    padding: 3px 8px 3px 8px;
+    /* float: right; */
+    margin: 2% 0% 1.5% 1%;
+}
+
 .rule-box {
     background-color: rgb(227, 227, 227);
     margin: 0% 0 0 0;
@@ -39,4 +49,12 @@
     margin: 1% 0 0 2%;
     padding: 3px 8px 3px 8px;
     /* float: right; */
+}
+
+.rule-box-boo {
+    display: flex;
+    background-color: rgb(227, 227, 227);
+    margin: 0% 0 0% 0;
+    padding: 1% 0 5% 2%;
+    border-radius: 0px;
 }

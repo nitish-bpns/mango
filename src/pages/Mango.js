@@ -1,12 +1,14 @@
 import React from 'react'
-import IncludedUsers from '../components/TargetUsers/IncludedUsers'
+import Boolean from '../components/flag/Boolean';
+import BooleanFalse from '../components/flag/BooleanFalse';
 
 function Mango() {
     return (
         <div className='mango' >
             <h3>
                 Mango</h3>
-            <IncludedUsers />
+            <Boolean />
+            <BooleanFalse />
         </div>
     )
 }
