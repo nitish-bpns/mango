@@ -1,0 +1,42 @@
+.rule-fld1 {
+    width: 20%;
+    margin: 0 2% 1% 0;
+    height: 2rem;
+    padding: 0 0 0 5px;
+}
+
+.rule-fld3 {
+    width: 48%;
+    margin: 0 2% 1% 0;
+    height: 2rem;
+    padding: 0 0 0 5px;
+}
+
+.add-rule-btn {
+    padding: 3px 8px 3px 8px;
+
+}
+
+.rem-rule-btn {
+    padding: 3px 8px 3px 8px;
+    /* float: right; */
+    margin: 0 0% 0 1%;
+}
+
+.rule-box {
+    background-color: rgb(227, 227, 227);
+    margin: 0% 0 0 0;
+    padding: 1% 0 0 2%;
+    border-radius: 0px;
+}
+
+.rem-rule {
+    margin: 1% 0 0 0;
+    padding: 3px 8px 3px 8px;
+}
+
+.add-rule {
+    margin: 1% 0 0 2%;
+    padding: 3px 8px 3px 8px;
+    /* float: right; */
+}

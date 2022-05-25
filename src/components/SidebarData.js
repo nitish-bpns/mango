@@ -22,5 +22,11 @@ export const SidebarData = [
         icon: <FaIcons.FaCartPlus />,
         cName: 'nav-text'
     },
+    {
+        title: 'Mango',
+        path: '/mango',
+        icon: <IoIcons.IoIosPaper />,
+        cName: 'nav-text'
+    },
 
 ];

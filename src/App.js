@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Reports from './pages/Reports';
 import Products from './pages/Products';
+import Mango from './pages/Mango';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route exact path='/' element={<Home />}></Route>
         <Route exact path='/reports' element={<Reports />}></Route>
         <Route exact path='/products' element={<Products />}></Route>
+        <Route exact path='/mango' element={<Mango />}></Route>
       </Routes>
     </Router>
   );

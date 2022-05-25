@@ -1,0 +1,27 @@
+.tarUsers {
+    font-size: 15px;
+    padding: 2px 6px;
+    margin: 2% 1% .25% 0;
+}
+
+.tarBox {
+    background-color: antiquewhite;
+    padding: 1% 1%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.remBtn {
+    margin: 0 0 0 0;
+    padding: 3px 8px 3px 8px;
+}
+
+.addBtn {
+    margin: 2% 0 0 0%;
+    padding: 3px 8px 3px 8px;
+    float: right;
+}
+
+.userRow {
+    width: 17rem;
+}

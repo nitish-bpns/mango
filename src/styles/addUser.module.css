@@ -1,0 +1,42 @@
+.launchBtn {
+    font-size: 16px;
+    padding: 5px 8px 5px 8px;
+}
+
+.mClose {
+    float: right;
+    color: red;
+    padding: 2px 6px;
+    display: inline;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.mHead {
+    display: inline;
+}
+
+.formDiv {
+    display: flex;
+    flex-wrap: wrap;
+    width: 22rem;
+    margin: 2% 0 0 0;
+}
+
+.modLabel {
+    width: 35%;
+    font-size: 15px;
+    padding: 2px 4px;
+}
+
+.modInput {
+    width: 65%;
+    font-size: 15px;
+    padding: 2px 4px;
+}
+
+.saveBtn {
+    /* float: right; */
+    font-size: 15px;
+    padding: 2px 13px;
+}
