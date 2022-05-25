@@ -17,7 +17,8 @@
 .home,
 .reports,
 .products,
-.mango {
+.mango,
+.userDetail {
   /* display: flex; */
   height: 90vh;
   /* align-items: center;

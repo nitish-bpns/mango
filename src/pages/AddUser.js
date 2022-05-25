@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import styles from './../styles/addUser.module.css';
 import BooleanExp from '../components/flag/BooleanExp';
+import StringVariation from '../components/string/StringVariation';
+import NumberFlag from '../components/flag/NumberFlag';
+import JsonFlag from '../components/flag/JsonFlag';
 
 
 const customStyles = {
@@ -280,21 +283,21 @@ function AddNewUser() {
                     {
                         showhide === 'bb' && (
                             <div>
-
+                                <StringVariation />
                             </div>
                         )
                     }
                     {
                         showhide === 'cc' && (
                             <div>
-                                testing3
+                                <NumberFlag />
                             </div>
                         )
                     }
                     {
                         showhide === 'dd' && (
                             <div>
-                                testing4
+                                <JsonFlag />
                             </div>
                         )
                     }

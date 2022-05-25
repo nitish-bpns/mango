@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './../../styles/ruleNew.css'
+import './../../styles/ruleNew.css';
 
 function Boolean() {
 

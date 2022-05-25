@@ -14,6 +14,7 @@
 
 .add-rule-btn {
     padding: 3px 8px 3px 8px;
+    cursor: pointer;
 
 }
 
@@ -21,16 +22,32 @@
     padding: 3px 8px 3px 8px;
     /* float: right; */
     margin: 0 0% 0 1%;
+    cursor: pointer;
 }
 
 .add-rule-btn-boo {
     padding: 3px 8px 3px 8px;
+    cursor: pointer;
+}
+
+.add-rule-btn-sti {
+    padding: 3px 8px 3px 8px;
+    border: 2px black;
+    cursor: pointer;
 }
 
 .rem-rule-btn-boo {
     padding: 3px 8px 3px 8px;
     /* float: right; */
     margin: 2% 0% 1.5% 1%;
+    cursor: pointer;
+}
+
+.rem-rule-btn-sti {
+    padding: 3px 5px 3px 5px;
+    /* float: right; */
+    margin: 3% 0% 0% 1%;
+    cursor: pointer;
 }
 
 .rule-box {
@@ -57,4 +74,42 @@
     margin: 0% 0 0% 0;
     padding: 1% 0 5% 2%;
     border-radius: 0px;
+}
+
+.rule-box-sti {
+    display: flex;
+    background-color: rgb(227, 227, 227);
+    margin: 0% 0 0% 0;
+    padding: 0% 0 5% 2%;
+    border-radius: 0px;
+}
+
+.rule-box-js {
+    display: flex;
+    background-color: rgb(227, 227, 227);
+    margin: 0% 0 0% 0;
+    padding: 0% 0 5% 2%;
+    border-radius: 0px;
+    flex-wrap: wrap;
+}
+
+.rule-js1 {
+    width: 92%;
+    margin: 0 2% 3% 0;
+    /* height: 2rem; */
+    padding: 0 0 0 5px;
+}
+
+.rule-js2 {
+    width: 45%;
+    margin: 0 2% 1% 0;
+    height: 2rem;
+    padding: 0 0 0 5px;
+}
+
+.rule-js3 {
+    width: 45%;
+    margin: 0 2% 1% 0;
+    height: 2rem;
+    padding: 0 0 0 5px;
 }

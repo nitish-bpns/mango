@@ -6,6 +6,8 @@ import Home from './pages/Home';
 import Reports from './pages/Reports';
 import Products from './pages/Products';
 import Mango from './pages/Mango';
+import UserDetail from './pages/UserDetail';
+
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
         <Route exact path='/reports' element={<Reports />}></Route>
         <Route exact path='/products' element={<Products />}></Route>
         <Route exact path='/mango' element={<Mango />}></Route>
+        <Route exact path='/userDetail' element={<UserDetail />}></Route>
       </Routes>
     </Router>
   );

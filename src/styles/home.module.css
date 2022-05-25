@@ -1,0 +1,20 @@
+.homeTop {
+    margin: 2% 0 0 0;
+}
+
+.tblHead {
+    color: grey;
+}
+
+.main {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.search {
+    width: 30%;
+}
