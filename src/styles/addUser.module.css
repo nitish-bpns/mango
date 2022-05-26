@@ -27,18 +27,18 @@
 .formDiv {
     display: flex;
     flex-wrap: wrap;
-    width: 30rem;
+    width: 39rem;
     margin: 2% 0 0 0;
 }
 
 .modLabel {
-    width: 35%;
+    width: 25%;
     font-size: 15px;
     padding: 2px 4px;
 }
 
 .modInput {
-    width: 65%;
+    width: 75%;
     font-size: 15px;
     padding: 2px 4px;
 }
@@ -71,9 +71,9 @@
 
 .onBtn {
     width: 4%;
-    margin: 2.5% 0 0 1.5%;
+    margin: 2% 0 0px 1.5%;
     border: 1px grey;
-    padding: 0 1.75rem 0 0;
+    padding: 2px 1.75rem 1px 0;
 }
 
 .happen {
@@ -82,7 +82,7 @@
 
 .offBtn {
     width: 4%;
-    margin: 2.5% 1% 0 1.5%;
+    margin: 1.7% .8% 0 1.5%;
     border: 1px grey;
     padding: 0 1.75rem 0 0;
 }

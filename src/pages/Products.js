@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SlidePane from '../components/SlidePane';
 
 class Products extends Component {
 
@@ -28,6 +29,8 @@ class Products extends Component {
                 }
                 <hr />
                 <button onClick={(e) => this.addCountry(e)} >add more</button>
+
+                <SlidePane />
             </div>
 
 

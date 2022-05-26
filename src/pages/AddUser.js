@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import styles from './../styles/addUser.module.css';
-import BooleanExp from '../components/flag/BooleanExp';
-import StringVariation from '../components/string/StringVariation';
+import Boolean from '../components/flag/Boolean';
+import StringVariation from '../components/flag/StringVariation';
 import NumberFlag from '../components/flag/NumberFlag';
 import JsonFlag from '../components/flag/JsonFlag';
 
@@ -261,6 +261,7 @@ function AddNewUser() {
                             onChange={(e) => (handleshowhide(e))}
                             className="mt-2 relative block w-full rounded-none bg-transparent sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-grey p-2 px-2"
                         >
+                            <option>Selelct</option>
                             <option value="aa" >Boolean</option>
                             <option value='bb' >String</option>
                             <option value='cc' >Number</option>
@@ -276,7 +277,7 @@ function AddNewUser() {
                     {
                         showhide === 'aa' && (
                             <div>
-                                <BooleanExp />
+                                <Boolean />
                             </div>
                         )
                     }

@@ -63,8 +63,9 @@ function FlagList(props) {
 
                                                         >
 
-                                                            <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
-                                                                {item.name}
+                                                            <td className="pt-4 whitespace-nowrap py-1 pl-4 pr-3 text-lg font-medium text-blue-900 sm:pl-6">
+                                                                <b>{item.name}</b>
+
                                                                 <br />
                                                                 <div className={styles.tblHead}>
                                                                     {item.tag}
