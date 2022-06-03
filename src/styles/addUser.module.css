@@ -64,9 +64,19 @@
     margin: 0 2.5% 0 0%;
 }
 
+.varOneT {
+    width: 40%;
+    margin: 2px 2.5% 0 0%;
+}
+
 .varTwo {
     width: 40%;
     margin: 0 2.5% 0 0%;
+}
+
+.varTwoT {
+    width: 40%;
+    margin: 1px 2.5% 0 -3px;
 }
 
 .onBtn {

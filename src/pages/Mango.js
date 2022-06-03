@@ -16,6 +16,8 @@ import "react-sliding-pane/dist/react-sliding-pane.css";
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import RuleNew from '../components/RuleNew';
 import RuleNewAdd from '../components/RuleNewAdd';
+import Targeting from './users/Targeting';
+import Variation from './users/Variation';
 
 
 function Mango() {
@@ -36,24 +38,31 @@ function Mango() {
 
     return (
         <div className='mango' >
-            <h3>
-                Mango</h3>
+            <div className='bg-blue-100 px-5'>
 
-            <Link to='/mango/flagList'>
+
+
+                {/* <Link to='/mango/flagList'>
                 click for flaglist
             </Link>
             <br />
             <Link to='/mango/ruleNew'>
                 click for ruleNew
-            </Link>
+            </Link> */}
+
+                < br />
+                <Targeting />
+
+                <Variation />
 
 
-            <Routes>
-                <Route path='/flagList' element={<FlagList />} />
-                <Route path='/ruleNew' element={<RuleNew />} />
-            </Routes>
+                <Routes>
+                    <Route path='/flagList' element={<FlagList />} />
+                    <Route path='/ruleNew' element={<RuleNew />} />
+                </Routes>
 
-        </div>
+            </div >
+        </div >
     )
 }
 

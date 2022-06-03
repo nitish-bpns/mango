@@ -1,0 +1,50 @@
+.on-swt {
+    width: 15px;
+}
+
+.indit {
+    width: 98%;
+    /* display: flex;
+    flex-wrap: wrap; */
+}
+
+.ml-2 {
+    /* margin-left: 0.5rem; */
+    display: inline !important;
+    float: right !important;
+}
+
+.align-items-center {
+    display: flex !important;
+}
+
+.styles_chip-input__3aumB {
+    box-shadow: 0 0 0 0.2rem transparent;
+    border: 2px solid #a59f9f;
+    transition: border 0.15s linear, box-shadow 0.15s linear;
+    background-color: white !important;
+    border-radius: 5px !important;
+}
+
+.m-0 {
+    margin: 5% 0 4% 5%;
+    border: 2px solid;
+    border-radius: 5px;
+}
+
+.styles_chip-input__3aumB .styles_chip__i-PT7 svg {
+    transition: height 0.15s linear, width 0.15s linear;
+    transform: scale(0.8);
+    margin-top: 1px;
+}
+
+.styles_chip-input__3aumB .styles_chip__i-PT7 {
+    transform: translateX(10px);
+    opacity: 0;
+    padding: 1px 3px 0px 5px;
+    border: 1px solid var(--react-chip-input__chip-border-color, var(--gray, rgba(0, 0, 0, 0.25)));
+    border-radius: 8px;
+    height: 27px;
+    background-color: var(--react-chip-input__chip-bg-color, #eaeaea);
+    transition: box-shadow 0.15s linear, background-color 0.15s linear, border 0.15s linear;
+}
