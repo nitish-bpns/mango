@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import SlidePane from '../components/SlidePane';
+import { Link } from 'react-router-dom';
 
-class Products extends Component {
+class Signin extends Component {
 
     state = {
         countries: []
@@ -19,9 +19,13 @@ class Products extends Component {
                 <div className="sm:mx-auto sm:w-full sm:max-w-md">
                     <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign in to your account</h2>
                     <p className="mt-2 text-center text-sm text-gray-600">
-                        Or{' '}
+                        Not registered yet?{' '}
 
-                        Create your account
+                        <span style={{ color: 'blue' }}>
+                            <Link to='/signup'>
+                                Create your account
+                            </Link>
+                        </span>
                     </p>
                 </div>
 
@@ -60,7 +64,7 @@ class Products extends Component {
                                 </div>
                             </div>
 
-                            <div className="flex items-center justify-between">
+                            {/* <div className="flex items-center justify-between">
                                 <div className="flex items-center">
                                     <input
                                         id="remember-me"
@@ -78,7 +82,7 @@ class Products extends Component {
                                         Forgot your password?
                                     </a>
                                 </div>
-                            </div>
+                            </div> */}
 
                             <div>
                                 <button
@@ -90,7 +94,7 @@ class Products extends Component {
                             </div>
                         </form>
 
-                        <div className="mt-6">
+                        {/* <div className="mt-6">
                             <div className="relative">
                                 <div className="absolute inset-0 flex items-center">
                                     <div className="w-full border-t border-gray-300" />
@@ -145,7 +149,7 @@ class Products extends Component {
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
@@ -153,4 +157,4 @@ class Products extends Component {
         );
     }
 }
-export default Products;
+export default Signin;

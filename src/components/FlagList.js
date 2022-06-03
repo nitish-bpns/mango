@@ -3,6 +3,7 @@ import { FeatureFlagData } from '../components/FeatureFlagData';
 import styles from './../styles/home.module.css';
 import AddNewUser from '../pages/AddUser';
 import { Link } from 'react-router-dom';
+import AddExp from './AddExp';
 
 
 
@@ -21,9 +22,11 @@ function FlagList(props) {
     })
 
 
+
     return (
         <div>
             <div className={styles.homeTop}>
+
                 <div className="px-4 sm:px-6 lg:px-8">
 
                     <div className="mt-8 flex flex-col">
@@ -58,9 +61,13 @@ function FlagList(props) {
 
                                                     <tr key={index}>
 
-                                                        <Link to={item.address}
-
-
+                                                        <Link to={{
+                                                            pathname: item.address
+                                                        }}
+                                                            state={{
+                                                                itemName: item.name,
+                                                                tag: item.tag
+                                                            }}
                                                         >
 
                                                             <td className="pt-4 whitespace-nowrap py-1 pl-4 pr-3 text-lg font-medium text-blue-900 sm:pl-6">
@@ -98,10 +105,16 @@ function FlagList(props) {
                                         </tbody>
                                     </table>
                                 </div>
+
                             </div>
+
                         </div>
+                        <br />
+                        <AddExp />
                     </div>
+
                 </div>
+
 
             </div>
 

@@ -2,56 +2,57 @@ import React, { useState } from 'react';
 import './../../styles/ruleNew.css';
 import styles from './../../styles/addUser.module.css';
 
-function StringVariation() {
+
+function NumberFlag() {
 
     const [stringList, setstringList] = useState([
         {
-            variationOne: "",
-            variationTwo: "",
-            description: "",
+            variationStrOne: "",
+            variationStrTwo: "",
+            descriptionNum: "",
         },
         {
-            variationOne: "",
-            variationTwo: "",
-            description: "",
+            variationStrOne: "",
+            variationStrTwo: "",
+            descriptionNum: "",
         },
     ]);
 
-    const [optionList, setoptionList] = useState([
+    const [optionStrList, setoptionStrList] = useState([
         {
-            optionOne: "",
+            optionStr: "",
         }
     ]);
 
-    const handleChange = (e, index) => {
+    const handleChangeStr = (e, index) => {
         const { name, value } = e.target;
 
         const list = [...stringList];
         list[index][name] = value;
         setstringList(list);
 
-        const option = [...optionList];
-        option[index][name] = value;
-        setoptionList(option);
+        const optionStr = [...optionStrList];
+        optionStr[index][name] = value;
+        setoptionStrList(optionStr);
     }
 
     const handleAddstring = () => {
-        setstringList([...stringList, { attribute: "", operator: "", someValue: "" }]);
-        setoptionList([...optionList, { optionOne: "", }])
+        setstringList([...stringList, { variationStrOne: "", variationStrTwo: "", descriptionNum: "" }]);
+        setoptionStrList([...optionStrList, { optionStr: "", }])
     }
 
-    const handleRemovestring = index => {
+    const handleremovestring = index => {
         const list = [...stringList];
         list.splice(index, 1);
         setstringList(list);
 
-        const option = [...optionList];
-        setoptionList(option)
+        const optionStr = [...optionStrList];
+        list.optionStr(index, 1);
+        setoptionStrList(optionStr)
     }
 
     return (
         <div>
-
             {stringList.map((item, i) => {
 
                 return (
@@ -60,13 +61,12 @@ function StringVariation() {
                             <div className='rule-fld1'>
                                 <label>Variation {i + 1}</label>
                                 <input
-                                    type="text"
-                                    name='variationOne'
+                                    type="number"
+                                    name='variationStrOne'
                                     className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-black p-1.5"
-                                    value={item.firstName}
-                                    onChange={e => handleChange(e, i)}
+                                    value={item.variationStrOne}
+                                    onChange={e => handleChangeStr(e, i)}
                                 >
-
                                 </input>
                             </div>
 
@@ -74,10 +74,10 @@ function StringVariation() {
                                 <label>Name</label>
                                 <input
                                     type="text"
-                                    name='operator'
+                                    name='variationStrTwo'
                                     className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-black p-1"
-                                    value={item.operator}
-                                    onChange={e => handleChange(e, i)}
+                                    value={item.variationStrTwo}
+                                    onChange={e => handleChangeStr(e, i)}
                                 />
 
 
@@ -87,21 +87,25 @@ function StringVariation() {
                                 <label>Description (optional)</label>
                                 <input
                                     type="text"
-                                    name='someValue'
+                                    name='descriptionNum'
                                     placeholder='Enter some value'
                                     className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-black p-1"
-                                    value={item.someValue}
-                                    onChange={e => handleChange(e, i)}
+                                    value={item.descriptionNum}
+                                    onChange={e => handleChangeStr(e, i)}
                                 />
                             </div>
 
                             <div className='rem-rule-btn-sti'>
-                                {stringList.length - 1 === i && stringList.length !== 1 && stringList.length !== 2 && <input
-                                    type="button"
-                                    value="-"
-                                    className='add-rule-btn'
-                                    onClick={() => handleRemovestring(i)}
-                                />}
+                                {
+                                    // stringList.length - 1 === i &&
+                                    // stringList.length !== 1 &&
+                                    stringList.length !== 2 &&
+                                    <input
+                                        type="button"
+                                        value="-"
+                                        className='add-rule-btn'
+                                        onClick={() => handleremovestring(i)}
+                                    />}
                             </div>
 
 
@@ -160,10 +164,6 @@ function StringVariation() {
 
                 </div>
 
-
-
-
-
                 <div className={styles.offBtn}>
                     <button
                         type="button"
@@ -187,18 +187,10 @@ function StringVariation() {
                         })}
                     </select>
                 </div>
-
-
             </div>
-
-
-
-
-
-
 
         </div>
     )
 }
 
-export default StringVariation;
+export default NumberFlag

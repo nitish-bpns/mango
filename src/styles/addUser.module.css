@@ -86,3 +86,17 @@
     border: 1px grey;
     padding: 0 1.75rem 0 0;
 }
+
+.addmore {
+    font-size: 16px;
+    padding: 5px 8px 5px 8px;
+    float: left !important;
+
+}
+
+.expDiv {
+    display: flex;
+    flex-wrap: wrap;
+    width: 33rem;
+    margin: 2% 0 0 0;
+}

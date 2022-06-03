@@ -7,22 +7,24 @@ function NumberFlag() {
 
     const [numberList, setnumberList] = useState([
         {
-            variationOne: "",
-            variationTwo: "",
-            description: "",
+            variationNumOne: "",
+            variationNumTwo: "",
+            descriptionNum: "",
         },
         {
-            variationOne: "",
-            variationTwo: "",
-            description: "",
+            variationNumOne: "",
+            variationNumTwo: "",
+            descriptionNum: "",
         },
     ]);
 
-    const [optionList, setoptionList] = useState([
+    const [optionNumList, setoptionNumList] = useState([
         {
-            optionOne: "",
+            optionNum: "",
         }
     ]);
+
+
 
     const handleChange = (e, index) => {
         const { name, value } = e.target;
@@ -31,14 +33,14 @@ function NumberFlag() {
         list[index][name] = value;
         setnumberList(list);
 
-        const option = [...optionList];
-        option[index][name] = value;
-        setoptionList(option);
+        const optionNum = [...optionNumList];
+        optionNum[index][name] = value;
+        setoptionNumList(optionNum);
     }
 
     const handleAddnumber = () => {
-        setnumberList([...numberList, { attribute: "", operator: "", someValue: "" }]);
-        setoptionList([...optionList, { optionOne: "", }])
+        setnumberList([...numberList, { variationNumOne: "", variationNumTwo: "", descriptionNum: "" }]);
+        setoptionNumList([...optionNumList, { optionNum: "", }])
     }
 
     const handleRemovenumber = index => {
@@ -46,9 +48,13 @@ function NumberFlag() {
         list.splice(index, 1);
         setnumberList(list);
 
-        const option = [...optionList];
-        setoptionList(option)
+        const optionNum = [...optionNumList];
+        list.optionNum(index, 1);
+        setoptionNumList(optionNum)
     }
+
+
+
 
     return (
         <div>
@@ -63,9 +69,9 @@ function NumberFlag() {
                                 <label>Variation {i + 1}</label>
                                 <input
                                     type="number"
-                                    name='variationOne'
+                                    name='variationNumOne'
                                     className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-black p-1.5"
-                                    value={item.firstName}
+                                    value={item.variationNumOne}
                                     onChange={e => handleChange(e, i)}
                                 >
 
@@ -76,9 +82,9 @@ function NumberFlag() {
                                 <label>Name</label>
                                 <input
                                     type="text"
-                                    name='operator'
+                                    name='variationNumTwo'
                                     className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-black p-1"
-                                    value={item.operator}
+                                    value={item.variationNumTwo}
                                     onChange={e => handleChange(e, i)}
                                 />
 
@@ -89,21 +95,25 @@ function NumberFlag() {
                                 <label>Description (optional)</label>
                                 <input
                                     type="text"
-                                    name='someValue'
+                                    name='descriptionNum'
                                     placeholder='Enter some value'
                                     className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-black p-1"
-                                    value={item.someValue}
+                                    value={item.descriptionNum}
                                     onChange={e => handleChange(e, i)}
                                 />
                             </div>
 
                             <div className='rem-rule-btn-sti'>
-                                {numberList.length - 1 === i && numberList.length !== 1 && numberList.length !== 2 && <input
-                                    type="button"
-                                    value="-"
-                                    className='add-rule-btn'
-                                    onClick={() => handleRemovenumber(i)}
-                                />}
+                                {
+                                    // numberList.length - 1 === i &&
+                                    // numberList.length !== 1 &&
+                                    numberList.length !== 2 &&
+                                    <input
+                                        type="button"
+                                        value="-"
+                                        className='add-rule-btn'
+                                        onClick={() => handleRemovenumber(i)}
+                                    />}
                             </div>
 
 

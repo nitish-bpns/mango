@@ -35,8 +35,8 @@ export const FeatureFlagData = [
         address: '/userDetail',
     },
     {
-        name: 'Lichi Users',
-        tag: 'lichi-users',
+        name: 'Apple Users',
+        tag: 'apple-users',
         date: '11-11-2022',
         requests: 'Not recent requests',
         variation: 'true- off variation',
@@ -46,8 +46,8 @@ export const FeatureFlagData = [
         address: '/userDetail',
     },
     {
-        name: 'Gun Users',
-        tag: 'gun-users',
+        name: 'Grapes Users',
+        tag: 'grapes-users',
         date: '10-10-2022',
         requests: 'No no recent requests',
         variation: 'on variation',

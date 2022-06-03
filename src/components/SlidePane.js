@@ -1,12 +1,9 @@
 import { Fragment, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
-// import { XIcon } from '@heroicons/react/outline'
 import * as AiIcons from 'react-icons/ai';
 import styles from './../styles/addUser.module.css';
-import Boolean from '../components/flag/Boolean';
-import StringVariation from './flag/StringVariation';
-import NumberFlag from '../components/flag/NumberFlag';
-import JsonFlag from '../components/flag/JsonFlag';
+import './../styles/ruleNew.css';
+
 
 function SlidePane() {
 
@@ -18,6 +15,158 @@ function SlidePane() {
         const getuser = event.target.value;
         setShowhide(getuser);
     }
+
+
+    // for number flag
+
+    const [numberList, setnumberList] = useState([
+        {
+            variationNumOne: "",
+            variationNumTwo: "",
+            descriptionNum: "",
+        },
+        {
+            variationNumOne: "",
+            variationNumTwo: "",
+            descriptionNum: "",
+        },
+    ]);
+
+    const [optionNumList, setoptionNumList] = useState([
+        {
+            optionNum: "",
+        }
+    ]);
+
+    const handleChange = (e, index) => {
+        const { name, value } = e.target;
+
+        const list = [...numberList];
+        list[index][name] = value;
+        setnumberList(list);
+
+        const optionNum = [...optionNumList];
+        optionNum[index][name] = value;
+        setoptionNumList(optionNum);
+    }
+
+    const handleAddnumber = () => {
+        setnumberList([...numberList, { variationNumOne: "", variationNumTwo: "", descriptionNum: "" }]);
+        setoptionNumList([...optionNumList, { optionNum: "", }])
+    }
+
+    const handleRemovenumber = index => {
+        const list = [...numberList];
+        list.splice(index, 1);
+        setnumberList(list);
+
+        const optionNum = [...optionNumList];
+        list.optionNum(index, 1);
+        setoptionNumList(optionNum)
+    }
+
+
+    // for string flag
+
+    const [stringList, setstringList] = useState([
+        {
+            variationStrOne: "",
+            variationStrTwo: "",
+            descriptionStr: "",
+        },
+        {
+            variationStrOne: "",
+            variationStrTwo: "",
+            descriptionStr: "",
+        },
+    ]);
+
+    const [optionStrList, setoptionStrList] = useState([
+        {
+            optionStr: "",
+        }
+    ]);
+
+    const handleChangeStr = (e, index) => {
+        const { name, value } = e.target;
+
+        const list = [...stringList];
+        list[index][name] = value;
+        setstringList(list);
+
+        const optionStr = [...optionStrList];
+        optionStr[index][name] = value;
+        setoptionStrList(optionStr);
+    }
+
+    const handleAddstring = () => {
+        setstringList([...stringList, { variationStrOne: "", variationStrTwo: "", descriptionStr: "" }]);
+        setoptionStrList([...optionStrList, { optionStr: "", }])
+    }
+
+    const handleremovestring = index => {
+        const list = [...stringList];
+        list.splice(index, 1);
+        setstringList(list);
+
+        const optionStr = [...optionStrList];
+        list.optionStr(index, 1);
+        setoptionStrList(optionStr)
+    }
+
+
+    // for JSON flag
+
+    const [jsonList, setjsonList] = useState([
+        {
+            variationJsOne: "",
+            variationJsTwo: "",
+            descriptionJs: "",
+        },
+        {
+            variationJsOne: "",
+            variationJsTwo: "",
+            descriptionJs: "",
+        },
+    ]);
+
+    const [optionJsList, setoptionJsList] = useState([
+        {
+            optionJs: "",
+        }
+    ]);
+
+
+
+    const handleChangeJs = (e, index) => {
+        const { name, value } = e.target;
+
+        const list = [...jsonList];
+        list[index][name] = value;
+        setjsonList(list);
+
+        const optionJs = [...optionJsList];
+        optionJs[index][name] = value;
+        setoptionJsList(optionJs);
+    }
+
+    const handleAddjson = () => {
+        setjsonList([...jsonList, { variationJsOne: "", variationJsTwo: "", descriptionJs: "" }]);
+        setoptionJsList([...optionJsList, { optionJs: "", }])
+    }
+
+    const handleRemovejson = index => {
+        const list = [...jsonList];
+        list.splice(index, 1);
+        setjsonList(list);
+
+        const optionJs = [...optionJsList];
+        list.optionJs(index, 1);
+        setoptionJsList(optionJs)
+    }
+
+
+
 
 
     return (
@@ -35,7 +184,10 @@ function SlidePane() {
             </div>
 
             <Transition.Root show={open} as={Fragment}>
-                <Dialog as="div" className="relative z-10" onClose={setOpen}>
+                <Dialog as="div" className="relative z-10" onClose={() => {
+                    setOpen(false)
+                    setShowhide("")
+                }}>
                     <Transition.Child
                         as={Fragment}
                         enter="ease-in-out duration-500"
@@ -62,6 +214,7 @@ function SlidePane() {
                                 >
                                     <Dialog.Panel className="pointer-events-auto w-screen max-w-3xl">
                                         <div className="bg-neutral-100 flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
+
                                             <div className="px-4 sm:px-6">
                                                 <div className="flex items-start justify-between">
                                                     <Dialog.Title className="text-xl font-medium text-gray-900"><b> Create a feature flag </b><br />
@@ -74,7 +227,10 @@ function SlidePane() {
                                                         <button
                                                             type="button"
                                                             className="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                                                            onClick={() => setOpen(false)}
+                                                            onClick={() => {
+                                                                setOpen(false)
+                                                                setShowhide("")
+                                                            }}
                                                         >
                                                             <span className="sr-only">Close panel</span>
                                                             {/* <XIcon className="h-6 w-6" aria-hidden="true" />
@@ -126,146 +282,8 @@ function SlidePane() {
                                                         </div>
                                                     </div>
                                                     <br />
-                                                    {/* <div className={styles.formDiv}>
-                                                        <label className={styles.modLabel}>Tags:</label>
-                                                        <div className={styles.modInput}>
-                                                            <input
-
-                                                                className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-black p-1"
-                                                                type='text'
-                                                                placeholder='Add tags'
-                                                            />
-                                                        </div>
-                                                    </div> 
-                                                    
-                                                    <h2 className="text-xl leading-7 font-medium text-gray-900">Client-side SDK availability</h2>
-                                                    <div className={styles.cBox1}>
-                                                        <fieldset className="space-y-5">
-                                                            <legend className="sr-only">Notifications</legend>
-                                                            <div className="relative flex items-start">
-                                                                <div className="flex items-center h-5">
-                                                                    <input
-                                                                        id="comments"
-                                                                        aria-describedby="comments-description"
-                                                                        name="comments"
-                                                                        type="checkbox"
-                                                                        className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                                                                    />
-                                                                </div>
-                                                                <div className="ml-3 text-sm">
-                                                                    <label htmlFor="comments" className="font-medium text-gray-700">
-                                                                        SDKs using Mobile key
-                                                                    </label>
-
-                                                                    <p id="comments-description" className="text-gray-500">
-                                                                        <button
-                                                                            type="button"
-                                                                            className="inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 
-                                            m-0.5"
-                                                                        >
-                                                                            Android
-                                                                        </button>
-
-                                                                        <button
-                                                                            type="button"
-                                                                            className="inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 m-0.5"
-                                                                        >
-                                                                            Flutter
-                                                                        </button>
-
-                                                                        <button
-                                                                            type="button"
-                                                                            className="inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 m-0.5"
-                                                                        >
-                                                                            Roku
-                                                                        </button>
-
-                                                                        <button
-                                                                            type="button"
-                                                                            className="inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 m-0.5"
-                                                                        >
-                                                                            React Native
-                                                                        </button>
-
-                                                                        <button
-                                                                            type="button"
-                                                                            className="inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 m-0.5"
-                                                                        >
-                                                                            C/C++ (client)
-                                                                        </button>
-
-                                                                        <button
-                                                                            type="button"
-                                                                            className="inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 m-0.5"
-                                                                        >
-
-                                                                            iOS
-                                                                        </button>
-
-                                                                        <button
-                                                                            type="button"
-                                                                            className="inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 m-0.5"
-                                                                        >
-
-                                                                            Xamarin
-                                                                        </button>
-
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-
-                                                            <div className="relative flex items-start">
-                                                                <div className="flex items-center h-5">
-                                                                    <input
-                                                                        id="candidates"
-                                                                        aria-describedby="candidates-description"
-                                                                        name="candidates"
-                                                                        type="checkbox"
-                                                                        className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                                                                    />
-                                                                </div>
-                                                                <div className="ml-3 text-sm">
-                                                                    <label htmlFor="candidates" className="font-medium text-gray-700">
-
-                                                                        SDKs using Client-side ID
-                                                                    </label>
-                                                                    <p id="candidates-description" className="text-gray-500">
-                                                                        <button
-                                                                            type="button"
-                                                                            className="inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                                                                        >
-                                                                            Electron
-                                                                        </button>
-                                                                        &nbsp;&nbsp;
-                                                                        <button
-                                                                            type="button"
-                                                                            className="inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                                                                        >
-                                                                            JavaScript
-                                                                        </button>
-                                                                        &nbsp;&nbsp;
-                                                                        <button
-                                                                            type="button"
-                                                                            className="inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                                                                        >
-                                                                            React
-                                                                        </button>
-                                                                        &nbsp;&nbsp;
-                                                                        <button
-                                                                            type="button"
-                                                                            className="inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                                                                        >
-                                                                            Node.js (client)
-                                                                        </button>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-
-                                                        </fieldset>
-                                                    </div> */}
                                                     <h2 className="text-xl leading-7 font-medium text-gray-900 mt-4">Flag variations</h2>
                                                     <div>
-
                                                         <select
                                                             id="country"
                                                             name="country"
@@ -285,102 +303,586 @@ function SlidePane() {
                                                         <br />
                                                     </div>
 
-
                                                     {
                                                         showhide === 'aa' && (
                                                             <div>
-                                                                <Boolean />
+                                                                <div className='rule-box-boo' >
+                                                                    <div className='rule-fld1'>
+                                                                        <label>Variation 1</label>
+                                                                        <select
+                                                                            type="option"
+                                                                            name='variationOne'
+                                                                            className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-black p-1.5">
+
+                                                                            <option value="att1">True</option>
+                                                                        </select>
+                                                                    </div>
+
+                                                                    <div className='rule-fld1'>
+                                                                        <label>Name</label>
+                                                                        <input
+                                                                            type="text"
+                                                                            name='operator'
+                                                                            className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-black p-1"
+                                                                        />
+                                                                    </div>
+
+                                                                    <div className='rule-fld3'>
+                                                                        <label>Description (optional)</label>
+                                                                        <input
+                                                                            type="text"
+                                                                            name='someValue'
+                                                                            placeholder='Enter some value'
+                                                                            className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-black p-1"></input>
+                                                                    </div>
+
+
+                                                                    <br />
+                                                                </div>
+
+                                                                <div className='rule-box-boo' >
+                                                                    <div className='rule-fld1'>
+                                                                        <label>Variation 2</label>
+                                                                        <select
+                                                                            type="option"
+                                                                            name='variationOne'
+                                                                            className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-black p-1.5">
+
+                                                                            <option value="att1">False</option>
+                                                                        </select>
+                                                                    </div>
+
+                                                                    <div className='rule-fld1'>
+                                                                        <label>Name</label>
+                                                                        <input
+                                                                            type="text"
+                                                                            name='operator'
+                                                                            className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-black p-1"
+                                                                        />
+                                                                    </div>
+
+                                                                    <div className='rule-fld3'>
+                                                                        <label>Description (optional)</label>
+                                                                        <input
+                                                                            type="text"
+                                                                            name='someValue'
+                                                                            placeholder='Enter some value'
+                                                                            className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-black p-1"></input>
+                                                                    </div>
+
+
+
+                                                                </div>
+
+
+                                                                <h2 className="text-xl leading-7 font-medium text-gray-900 mt-4">Default variations</h2>
+                                                                <div className={styles.defVar}>
+                                                                    <div className={styles.onBtn}>
+                                                                        <button
+                                                                            type="button"
+                                                                            className="bg-green-400 inline-flex items-center px-2 py-2.5 -mt-1 -ml-2
+                          border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 "
+                                                                        >
+                                                                            ON
+                                                                        </button>
+                                                                    </div>
+                                                                    <div className={styles.varOne}>
+
+                                                                        <select
+                                                                            id="country"
+                                                                            name="country"
+                                                                            autoComplete="country-name"
+                                                                            className="mt-3 relative block w-full rounded-none bg-transparent sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-grey p-2 px-2"
+                                                                        >
+                                                                            <option>True</option>
+                                                                            <option>False</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div className={styles.offBtn}>
+                                                                        <button
+                                                                            type="button"
+                                                                            className="bg-red-500 inline-flex items-center px-1.5 py-2.5 -ml-1  border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 "
+                                                                        >
+                                                                            OFF
+                                                                        </button>
+                                                                    </div>
+                                                                    <div className={styles.varTwo}>
+                                                                        <select
+                                                                            id="country"
+                                                                            name="country"
+                                                                            autoComplete="country-name"
+                                                                            className="mt-3 relative block w-full rounded-none bg-transparent sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-grey p-2 px-2"
+                                                                        >
+                                                                            <option>False</option>
+                                                                            <option>True</option>
+                                                                        </select>
+                                                                    </div>
+
+                                                                </div>
                                                             </div>
+
                                                         )
                                                     }
                                                     {
                                                         showhide === 'bb' && (
                                                             <div>
-                                                                <StringVariation />
+                                                                <div>
+                                                                    {stringList.map((item, i) => {
+
+                                                                        return (
+                                                                            <div key={i}  >
+                                                                                <div className='rule-box-sti'>
+                                                                                    <div className='rule-fld1'>
+                                                                                        <label>Variation {i + 1}</label>
+                                                                                        <input
+                                                                                            type="number"
+                                                                                            name='variationStrOne'
+                                                                                            className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-black p-1.5"
+                                                                                            value={item.variationStrOne}
+                                                                                            onChange={e => handleChangeStr(e, i)}
+                                                                                        >
+                                                                                        </input>
+                                                                                    </div>
+
+                                                                                    <div className='rule-fld1'>
+                                                                                        <label>Name</label>
+                                                                                        <input
+                                                                                            type="text"
+                                                                                            name='variationStrTwo'
+                                                                                            className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-black p-1"
+                                                                                            value={item.variationStrTwo}
+                                                                                            onChange={e => handleChangeStr(e, i)}
+                                                                                        />
+
+
+                                                                                    </div>
+
+                                                                                    <div className='rule-fld3'>
+                                                                                        <label>Description (optional)</label>
+                                                                                        <input
+                                                                                            type="text"
+                                                                                            name='descriptionStr'
+                                                                                            placeholder='Enter some value'
+                                                                                            className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-black p-1"
+                                                                                            value={item.descriptionStr}
+                                                                                            onChange={e => handleChangeStr(e, i)}
+                                                                                        />
+                                                                                    </div>
+
+                                                                                    <div className='rem-rule-btn-sti'>
+                                                                                        {
+                                                                                            // stringList.length - 1 === i &&
+                                                                                            // stringList.length !== 1 &&
+                                                                                            stringList.length !== 2 &&
+                                                                                            <input
+                                                                                                type="button"
+                                                                                                value="-"
+                                                                                                className='add-rule-btn'
+                                                                                                onClick={() => handleremovestring(i)}
+                                                                                            />}
+                                                                                    </div>
+
+
+                                                                                </div>
+
+
+                                                                                <div className='add-rule-btn-sti'>
+                                                                                    {stringList.length - 1 === i &&
+                                                                                        <button
+                                                                                            type="button"
+                                                                                            className="bg-indigo-200 inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                                                                        >
+                                                                                            <input
+                                                                                                type="button"
+                                                                                                value="Add more variation"
+                                                                                                className='rem-rule-btn'
+                                                                                                onClick={handleAddstring}
+                                                                                            />
+                                                                                        </button>}
+                                                                                </div>
+
+
+
+                                                                            </div>
+
+                                                                        )
+                                                                    }
+                                                                    )}
+                                                                    <br />
+                                                                    <h2 className="text-xl leading-7 font-medium text-gray-900 mt-4">Default variations</h2>
+
+                                                                    <div className={styles.defVar}>
+                                                                        <div className={styles.onBtn}>
+                                                                            <button
+                                                                                type="button"
+                                                                                className="bg-green-400 inline-flex items-center px-2 py-2.5 -mt-1 -ml-2
+                          border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 "
+                                                                            >
+                                                                                ON
+                                                                            </button>
+                                                                        </div>
+                                                                        <div className={styles.varOne}>
+
+                                                                            <select
+                                                                                type='option'
+                                                                                autoComplete="country-name"
+                                                                                className="mt-3 relative block w-full rounded-none bg-transparent sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-grey p-2 px-2" >
+
+                                                                                {stringList.map((item, i) => {
+                                                                                    return (
+                                                                                        <option>Variation {i + 1}</option>
+
+                                                                                    )
+                                                                                })}
+                                                                            </select>
+
+                                                                        </div>
+
+                                                                        <div className={styles.offBtn}>
+                                                                            <button
+                                                                                type="button"
+                                                                                className="bg-red-500 inline-flex items-center px-1.5 py-2.5 -ml-1  border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 "
+                                                                            >
+                                                                                OFF
+                                                                            </button>
+                                                                        </div>
+                                                                        <div className={styles.varTwo}>
+
+                                                                            <select
+                                                                                type='option'
+                                                                                className="mt-3 relative block w-full rounded-none bg-transparent sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-grey p-2 px-2"
+                                                                            >
+
+                                                                                {stringList.map((item, i) => {
+                                                                                    return (
+                                                                                        <option>Variation {i + 1}</option>
+
+                                                                                    )
+                                                                                })}
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
                                                             </div>
                                                         )
                                                     }
                                                     {
                                                         showhide === 'cc' && (
                                                             <div>
-                                                                <NumberFlag />
+                                                                <div>
+
+
+                                                                    {numberList.map((item, i) => {
+
+                                                                        return (
+                                                                            <div key={i}  >
+                                                                                <div className='rule-box-sti'>
+                                                                                    <div className='rule-fld1'>
+                                                                                        <label>Variation {i + 1}</label>
+                                                                                        <input
+                                                                                            type="number"
+                                                                                            name='variationNumOne'
+                                                                                            className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-black p-1.5"
+                                                                                            value={item.variationNumOne}
+                                                                                            onChange={e => handleChange(e, i)}
+                                                                                        >
+
+                                                                                        </input>
+                                                                                    </div>
+
+                                                                                    <div className='rule-fld1'>
+                                                                                        <label>Name</label>
+                                                                                        <input
+                                                                                            type="text"
+                                                                                            name='variationNumTwo'
+                                                                                            className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-black p-1"
+                                                                                            value={item.variationNumTwo}
+                                                                                            onChange={e => handleChange(e, i)}
+                                                                                        />
+
+
+                                                                                    </div>
+
+                                                                                    <div className='rule-fld3'>
+                                                                                        <label>Description (optional)</label>
+                                                                                        <input
+                                                                                            type="text"
+                                                                                            name='descriptionNum'
+                                                                                            placeholder='Enter some value'
+                                                                                            className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-black p-1"
+                                                                                            value={item.descriptionNum}
+                                                                                            onChange={e => handleChange(e, i)}
+                                                                                        />
+                                                                                    </div>
+
+                                                                                    <div className='rem-rule-btn-sti'>
+                                                                                        {
+                                                                                            // numberList.length - 1 === i &&
+                                                                                            // numberList.length !== 1 &&
+                                                                                            numberList.length !== 2 &&
+                                                                                            <input
+                                                                                                type="button"
+                                                                                                value="-"
+                                                                                                className='add-rule-btn'
+                                                                                                onClick={() => handleRemovenumber(i)}
+                                                                                            />}
+                                                                                    </div>
+
+
+                                                                                </div>
+
+
+                                                                                <div className='add-rule-btn-sti'>
+                                                                                    {numberList.length - 1 === i &&
+                                                                                        <button
+                                                                                            type="button"
+                                                                                            className="bg-indigo-200 inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                                                                        >
+                                                                                            <input
+                                                                                                type="button"
+                                                                                                value="Add more variation"
+                                                                                                className='rem-rule-btn'
+                                                                                                onClick={handleAddnumber}
+                                                                                            />
+                                                                                        </button>}
+                                                                                </div>
+
+
+
+                                                                            </div>
+
+                                                                        )
+                                                                    }
+                                                                    )}
+                                                                    <br />
+                                                                    <h2 className="text-xl leading-7 font-medium text-gray-900 mt-4">Default variations</h2>
+
+                                                                    <div className={styles.defVar}>
+                                                                        <div className={styles.onBtn}>
+                                                                            <button
+                                                                                type="button"
+                                                                                className="bg-green-400 inline-flex items-center px-2 py-2.5 -mt-1 -ml-2
+              border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 "
+                                                                            >
+                                                                                ON
+                                                                            </button>
+                                                                        </div>
+                                                                        <div className={styles.varOne}>
+
+                                                                            <select
+                                                                                type='option'
+                                                                                autoComplete="country-name"
+                                                                                className="mt-3 relative block w-full rounded-none bg-transparent sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-grey p-2 px-2" >
+
+                                                                                {numberList.map((item, i) => {
+                                                                                    return (
+                                                                                        <option>Variation {i + 1}</option>
+
+                                                                                    )
+                                                                                })}
+                                                                            </select>
+
+                                                                        </div>
+
+
+
+
+
+                                                                        <div className={styles.offBtn}>
+                                                                            <button
+                                                                                type="button"
+                                                                                className="bg-red-500 inline-flex items-center px-1.5 py-2.5 -ml-1  border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 "
+                                                                            >
+                                                                                OFF
+                                                                            </button>
+                                                                        </div>
+                                                                        <div className={styles.varTwo}>
+
+                                                                            <select
+                                                                                type='option'
+                                                                                className="mt-3 relative block w-full rounded-none bg-transparent sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-grey p-2 px-2"
+                                                                            >
+
+                                                                                {numberList.map((item, i) => {
+                                                                                    return (
+                                                                                        <option>Variation {i + 1}</option>
+
+                                                                                    )
+                                                                                })}
+                                                                            </select>
+                                                                        </div>
+
+
+                                                                    </div>
+
+
+
+
+
+
+                                                                </div>
                                                             </div>
                                                         )
                                                     }
                                                     {
                                                         showhide === 'dd' && (
                                                             <div>
-                                                                <JsonFlag />
+                                                                <div>
+
+                                                                    {jsonList.map((item, i) => {
+
+                                                                        return (
+                                                                            <div key={i}  >
+                                                                                <div className='rule-box-js'>
+                                                                                    <div className='rule-js1'>
+                                                                                        <label>Variation {i + 1}</label>
+                                                                                        <textarea
+                                                                                            type="text"
+                                                                                            rows="8"
+                                                                                            name='variationJsOne'
+                                                                                            className="leading-5 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-black p-1.5"
+                                                                                            value={item.variationJsOne}
+                                                                                            onChange={e => handleChangeJs(e, i)}
+                                                                                        >
+
+                                                                                        </textarea>
+                                                                                    </div>
+
+                                                                                    <div className='rule-js2'>
+                                                                                        <label>Name</label>
+                                                                                        <input
+                                                                                            type="text"
+                                                                                            name='variationJsTwo'
+                                                                                            className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-black p-1"
+                                                                                            value={item.variationJsTwo}
+                                                                                            onChange={e => handleChangeJs(e, i)}
+                                                                                        />
+
+
+                                                                                    </div>
+
+                                                                                    <div className='rule-js3'>
+                                                                                        <label>Description (optional)</label>
+                                                                                        <input
+                                                                                            type="text"
+                                                                                            name='descriptionJs'
+                                                                                            placeholder='Enter some value'
+                                                                                            className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-black p-1"
+                                                                                            value={item.descriptionJs}
+                                                                                            onChange={e => handleChangeJs(e, i)}
+                                                                                        />
+                                                                                    </div>
+
+                                                                                    <div className='rem-rule-btn-sti'>
+                                                                                        {
+                                                                                            // jsonList.length - 1 === i &&
+                                                                                            // jsonList.length !== 1 &&
+                                                                                            jsonList.length !== 2 &&
+                                                                                            <input
+                                                                                                type="button"
+                                                                                                value="-"
+                                                                                                className='add-rule-btn'
+                                                                                                onClick={() => handleRemovejson(i)}
+                                                                                            />}
+                                                                                    </div>
+
+
+                                                                                </div>
+
+
+                                                                                <div className='add-rule-btn-sti'>
+                                                                                    {jsonList.length - 1 === i &&
+                                                                                        <button
+                                                                                            type="button"
+                                                                                            className="bg-indigo-200 inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                                                                        >
+                                                                                            <input
+                                                                                                type="button"
+                                                                                                value="Add more variation"
+                                                                                                className='rem-rule-btn'
+                                                                                                onClick={handleAddjson}
+                                                                                            />
+                                                                                        </button>}
+                                                                                </div>
+
+
+
+                                                                            </div>
+
+                                                                        )
+                                                                    }
+                                                                    )}
+                                                                    <br />
+                                                                    <h2 className="text-xl leading-7 font-medium text-gray-900 mt-4">Default variations</h2>
+
+                                                                    <div className={styles.defVar}>
+                                                                        <div className={styles.onBtn}>
+                                                                            <button
+                                                                                type="button"
+                                                                                className="bg-green-400 inline-flex items-center px-2 py-2.5 -mt-1 -ml-2
+              border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 "
+                                                                            >
+                                                                                ON
+                                                                            </button>
+                                                                        </div>
+                                                                        <div className={styles.varOne}>
+
+                                                                            <select
+                                                                                type='option'
+                                                                                autoComplete="country-name"
+                                                                                className="mt-3 relative block w-full rounded-none bg-transparent sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-grey p-2 px-2" >
+
+                                                                                {jsonList.map((item, i) => {
+                                                                                    return (
+                                                                                        <option>Variation {i + 1}</option>
+
+                                                                                    )
+                                                                                })}
+                                                                            </select>
+
+                                                                        </div>
+
+
+
+
+
+                                                                        <div className={styles.offBtn}>
+                                                                            <button
+                                                                                type="button"
+                                                                                className="bg-red-500 inline-flex items-center px-1.5 py-2.5 -ml-1  border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 "
+                                                                            >
+                                                                                OFF
+                                                                            </button>
+                                                                        </div>
+                                                                        <div className={styles.varTwo}>
+
+                                                                            <select
+                                                                                type='option'
+                                                                                className="mt-3 relative block w-full rounded-none bg-transparent sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-grey p-2 px-2"
+                                                                            >
+
+                                                                                {jsonList.map((item, i) => {
+                                                                                    return (
+                                                                                        <option>Variation {i + 1}</option>
+
+                                                                                    )
+                                                                                })}
+                                                                            </select>
+                                                                        </div>
+
+
+                                                                    </div>
+
+
+
+
+
+
+                                                                </div>
                                                             </div>
                                                         )
                                                     }
-                                                    {/* 
-                    <h2 className="text-xl leading-7 font-medium text-gray-900 mt-4">Default variations</h2>
-                    <div className={styles.defVar}>
-                        <div className={styles.onBtn}>
-                            <button
-                                type="button"
-                                className="inline-flex items-center px-1 py-2  border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 "
-                            >
-                                ON
-                            </button>
-                        </div>
-                        <div className={styles.varOne}>
-
-                            <select
-                                id="country"
-                                name="country"
-                                autoComplete="country-name"
-                                className="mt-3 relative block w-full rounded-none bg-transparent sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-grey p-2 px-2"
-                            >
-                                <option>Variation 1</option>
-                                <option>Variation2</option>
-                            </select>
-                        </div>
-                        <div className={styles.offBtn}>
-                            <button
-                                type="button"
-                                className="inline-flex items-center px-1 py-2  border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 "
-                            >
-                                OFF
-                            </button>
-                        </div>
-                        <div className={styles.varTwo}>
-                            <select
-                                id="country"
-                                name="country"
-                                autoComplete="country-name"
-                                className="mt-3 relative block w-full rounded-none bg-transparent sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-grey p-2 px-2"
-                            >
-                                <option>Variation 1</option>
-                                <option>Variation2</option>
-                            </select>
-                        </div>
-
-                    </div> */}
-
-
-                                                    {/* <div className={styles.happen} >
-                                                        <div className="relative flex items-start">
-                                                            <div className="flex items-center h-5">
-                                                                <input
-                                                                    id="comments"
-                                                                    aria-describedby="comments-description"
-                                                                    name="comments"
-                                                                    type="checkbox"
-                                                                    className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                                                                />
-                                                            </div>
-                                                            <div className="ml-3 text-sm">
-                                                                <label htmlFor="comments" className="font-medium text-gray-700">
-                                                                    This is a permanent flag.
-                                                                </label>
-
-                                                            </div>
-                                                        </div>
-                                                    </div> */}
-
-
 
                                                     <br />
                                                     <button
@@ -389,9 +891,7 @@ function SlidePane() {
                                                     >
                                                         Save Flag
                                                     </button>
-                                                    {/* <button className={styles.saveBtn} >Save segment</button> */}
                                                 </form>
-                                                {/* /End replace */}
                                             </div>
                                         </div>
                                     </Dialog.Panel>

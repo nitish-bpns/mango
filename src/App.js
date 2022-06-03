@@ -7,6 +7,9 @@ import Reports from './pages/Reports';
 import Products from './pages/Products';
 import Mango from './pages/Mango';
 import UserDetail from './pages/UserDetail';
+import Targeting from './pages/users/Targeting';
+import Signin from './pages/Signin';
+import Signup from './pages/Signup';
 
 
 function App() {
@@ -14,13 +17,18 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route exact path='/' element={<Home />}></Route>
+        <Route path='/' element={<Home />}></Route>
+        <Route exact path='/signin' element={<Signin />}></Route>
+        <Route exact path='/signup' element={<Signup />}></Route>
         <Route exact path='/reports' element={<Reports />}></Route>
-        <Route exact path='/products' element={<Products />}></Route>
-        <Route exact path='/mango' element={<Mango />}></Route>
-        <Route exact path='/userDetail' element={<UserDetail />}></Route>
+        <Route exact path='/products/*' element={<Products />}></Route>
+        <Route path='/mango/*' element={<Mango />}></Route>
+        <Route path='/userDetail' element={<UserDetail />}></Route>
+        {/* <Route path='/userDetail/:item.name/*' element={<UserDetail />}></Route> */}
+        {/* <Route path='/userDetails/targeting' render={() => (<Targeting />)}></Route> */}
+
       </Routes>
-    </Router>
+    </Router >
   );
 }
 

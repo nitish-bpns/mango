@@ -3,7 +3,6 @@ import SlidePane from '../components/SlidePane';
 import styles from './../styles/home.module.css';
 import FlagList from '../components/FlagList';
 
-
 function Home() {
 
     const [inputText, setInputText] = useState("");
@@ -22,7 +21,7 @@ function Home() {
                     <div className="px-4 sm:px-6 lg:px-8">
                         <div className="sm:flex sm:items-center">
                             <div className="sm:flex-auto">
-                                <h1 className="mt-4 text-xl font-semibold text-gray-900"> Feature flags</h1>
+                                <h1 className="mt-4 text-xl font-semibold text-gray-900"> Experiments</h1>
                                 <p className="mt-2 text-sm text-gray-700">
                                     Use this page to see all feature flags in this project. Select a flag to manage the environment-specific targeting and rollout rules.
                                 </p>
@@ -45,7 +44,9 @@ function Home() {
                 </div>
                 <hr style={{ color: 'white' }} />
                 <FlagList input={inputText} />
+
                 <br />
+
 
 
             </div>
