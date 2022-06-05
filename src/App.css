@@ -90,6 +90,22 @@
   height: auto;
 }
 
+.bg-account {
+  background-color: #e1e8ed;
+  height: auto;
+}
+
+.AccountSet {
+  height: auto;
+  /* align-items: center;
+  justify-content: center; */
+  /* font-size: 3rem; */
+  width: 85%;
+  float: right;
+  padding: 0 0 0 0%;
+  margin: -1.6% 0 0 0;
+}
+
 /* .p-2 {
   padding: 0.5rem;
   width: 10%;

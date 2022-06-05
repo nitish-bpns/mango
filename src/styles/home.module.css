@@ -18,3 +18,14 @@
 .search {
     width: 30%;
 }
+
+.accountTop {
+    margin: 1% 0 0 0;
+}
+
+.lineAS {
+    height: 1.5px;
+    background-color: rgb(211, 211, 211);
+    color: black;
+    box-shadow: 0 1px 8px grey;
+}

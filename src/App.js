@@ -10,6 +10,7 @@ import UserDetail from './pages/UserDetail';
 import Targeting from './pages/users/Targeting';
 import Signin from './pages/Signin';
 import Signup from './pages/Signup';
+import AccountSetting from './pages/AccountSetting';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route exact path='/signin' element={<Signin />}></Route>
         <Route exact path='/signup' element={<Signup />}></Route>
         <Route exact path='/reports' element={<Reports />}></Route>
+        <Route exact path='/accSetting' element={<AccountSetting />}></Route>
         <Route exact path='/products/*' element={<Products />}></Route>
         <Route path='/mango/*' element={<Mango />}></Route>
         <Route path='/userDetail' element={<UserDetail />}></Route>
