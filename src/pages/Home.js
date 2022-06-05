@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import SlidePane from '../components/SlidePane';
 import styles from './../styles/home.module.css';
 import FlagList from '../components/FlagList';
+import MemberTable from './AccountSetting/MemberTable';
 
 function Home() {
 
@@ -45,6 +46,7 @@ function Home() {
                 <hr style={{ color: 'white' }} />
                 <FlagList input={inputText} />
 
+                <MemberTable />
                 <br />
 
 

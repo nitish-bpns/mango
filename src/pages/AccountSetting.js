@@ -1,7 +1,12 @@
 import React, { useState } from 'react'
-import styles from './../styles/home.module.css';
+import styles from './../styles/account.module.css';
 import { makeStyles, withStyles } from "@material-ui/styles";
 import { ButtonBase } from "@material-ui/core";
+import Organization from './AccountSetting/Organization';
+import Members from './AccountSetting/Members';
+import Teams from './AccountSetting/Teams';
+import Projects from './AccountSetting/Projects';
+import Authorization from './AccountSetting/Authorization';
 
 
 const StyledButton = withStyles(() => (
@@ -53,35 +58,35 @@ function AccountSetting() {
         {
             name: 'Organization',
             href: '#',
-            current: ''
+            current: <Organization />
         }
     ]
     const menu2 = [
         {
             name: 'Members',
             href: '#',
-            current: ''
+            current: <Members />
         }
     ]
     const menu3 = [
         {
             name: 'Teams',
             href: '#',
-            current: ''
+            current: <Teams />
         }
     ]
     const menu4 = [
         {
             name: 'Projects',
             href: '#',
-            current: ''
+            current: <Projects />
         }
     ]
     const menu5 = [
         {
             name: 'Authorization',
             href: '#',
-            current: ''
+            current: <Authorization />
         }
     ]
 
@@ -100,6 +105,22 @@ function AccountSetting() {
         setTab(menu2);
         setActiveButton("second");
     }
+    const handletab3 = (e) => {
+
+        setTab(menu3);
+        setActiveButton("third");
+    }
+    const handletab4 = (e) => {
+
+        setTab(menu4);
+        setActiveButton("fourth");
+    }
+    const handletab5 = (e) => {
+
+        setTab(menu5);
+        setActiveButton("fifth");
+    }
+
 
 
     const [menu, setMenu] = useState()
@@ -113,7 +134,9 @@ function AccountSetting() {
     return (
         <div className='AccountSet'>
 
-            <div className='bg-account'>
+            <div
+            // className='bg-account'
+            >
 
                 <div className={styles.accountTop}>
                     <div className="px-4 sm:px-6 lg:px-8">
@@ -129,40 +152,59 @@ function AccountSetting() {
                         </div>
                     </div>
                 </div>
-                <hr style={{ color: 'white' }} />
+                {/* <hr style={{ color: 'white' }} /> */}
 
 
-                <div className='outer'>
+                <div className={styles.outer}>
                     <div className="inner">
                         <StyledButton
                             // className="btn-item"
                             className={activeButton === "first" ? `${classes.activeButton}` : ""}
-                            onClick={handletab}
-
-                        >
-                            Targeting
+                            onClick={handletab}>
+                            Organization
                         </StyledButton>
                     </div>
                     <div className="inner">
                         <StyledButton
                             className={activeButton === "second" ? `${classes.activeButton}` : ""}
                             onClick={handletab2} >
-                            Variation
+                            Members
+                        </StyledButton>
+                    </div>
+                    <div className="inner">
+                        <StyledButton
+                            className={activeButton === "third" ? `${classes.activeButton}` : ""}
+                            onClick={handletab3} >
+                            Teams
+                        </StyledButton>
+                    </div>
+                    <div className="inner">
+                        <StyledButton
+                            className={activeButton === "fourth" ? `${classes.activeButton}` : ""}
+                            onClick={handletab4} >
+                            Projects
+                        </StyledButton>
+                    </div>
+                    <div className="inner">
+                        <StyledButton
+                            className={activeButton === "fifth" ? `${classes.activeButton}` : ""}
+                            onClick={handletab5} >
+                            Authorization
                         </StyledButton>
                     </div>
                 </div>
 
+
+            </div>
+
+            <div className={styles.lineAS} />
+            <div className={styles.acComp}>
 
                 {
                     tab && (Object.entries(tab).map(tab => {
                         // console.log(item)
                         return (
                             <div>
-                                <div className='brand-box'>
-
-                                    <div className={styles.lineAS} />
-
-                                </div>
                                 <div className='mainCont'>
                                     {tab.map(({ name, href, current }) => (
 
@@ -177,17 +219,18 @@ function AccountSetting() {
                         )
                     }))
                 }
-
-
-
-
-
-
-
-
-
-
             </div>
+
+
+
+
+
+
+
+
+
+
+
 
         </div>
     )

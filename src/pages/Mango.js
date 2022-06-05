@@ -18,9 +18,18 @@ import RuleNew from '../components/RuleNew';
 import RuleNewAdd from '../components/RuleNewAdd';
 import Targeting from './users/Targeting';
 import Variation from './users/Variation';
+import MemberTable from './AccountSetting/MemberTable';
+// import InvitePane from './AccountSetting/InvitePane';
 
 
 function Mango() {
+
+    // const [inputText, setInputText] = useState("");
+    // let inputHandler = (e) => {
+    //     //convert input text to lower case
+    //     var lowerCase = e.target.value.toLowerCase();
+    //     setInputText(lowerCase);
+    // };
 
     const [inputText, setInputText] = useState("");
     let inputHandler = (e) => {
@@ -29,15 +38,16 @@ function Mango() {
         setInputText(lowerCase);
     };
 
-    const [open, setOpen] = useState(false)
+    // const [open, setOpen] = useState(false)
 
-    const [state, setState] = useState({
-        isPaneOpen: false,
-        isPaneOpenLeft: false,
-    });
+    // const [state, setState] = useState({
+    //     isPaneOpen: false,
+    //     isPaneOpenLeft: false,
+    // });
 
     return (
         <div className='mango' >
+            For experiment purpose currently
             <div className='bg-blue-100 px-5'>
 
 
@@ -50,8 +60,18 @@ function Mango() {
                 click for ruleNew
             </Link> */}
 
+                <div className="mt-1">
+                    <input
+
+                        className="mt-3 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-black p-1 rounded"
+                        type='text'
+                        placeholder='Search here'
+                        onChange={inputHandler}
+                    />
+                </div>
                 < br />
-                <Targeting />
+                <MemberTable />
+                {/* <Targeting />
 
                 <Variation />
 
@@ -59,7 +79,7 @@ function Mango() {
                 <Routes>
                     <Route path='/flagList' element={<FlagList />} />
                     <Route path='/ruleNew' element={<RuleNew />} />
-                </Routes>
+                </Routes> */}
 
             </div >
         </div >
