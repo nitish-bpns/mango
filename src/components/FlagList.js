@@ -61,14 +61,21 @@ function FlagList(props) {
 
                                                     <tr key={index}>
 
-                                                        <Link to={{
-                                                            pathname: item.address
-                                                        }}
+                                                        <Link to={`/userDetail/${index + 1}`}
                                                             state={{
                                                                 itemName: item.name,
                                                                 tag: item.tag
                                                             }}
                                                         >
+
+                                                            {/* <Link to={{
+                                                                pathname: item.address
+                                                            }}
+                                                                state={{
+                                                                    itemName: item.name,
+                                                                    tag: item.tag
+                                                                }}
+                                                            > */}
 
                                                             <td className="pt-4 whitespace-nowrap py-1 pl-4 pr-3 text-lg font-medium text-blue-900 sm:pl-6">
                                                                 <b>{item.name}</b>

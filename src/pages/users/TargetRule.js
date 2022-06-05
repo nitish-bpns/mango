@@ -40,7 +40,7 @@ function TargetRule() {
                         <select
                             type="option"
                             name='attribute'
-                            className='rule-fld1 rounded border-solid border-2 border-black'
+                            className='rule-fld1 rounded border-solid border-2 border-gray-300'
                             value={item.firstName}
                             onChange={e => handleChange(e, i)}
                         >
@@ -54,7 +54,7 @@ function TargetRule() {
                         <select
                             type="option"
                             name='operator'
-                            className='rule-fld1 rounded border-solid border-2 border-black'
+                            className='rule-fld1 rounded border-solid border-2 border-gray-300'
                             value={item.operator}
                             onChange={e => handleChange(e, i)}
                         >
@@ -69,7 +69,7 @@ function TargetRule() {
                             type="text"
                             name='someValue'
                             placeholder='Enter some value'
-                            className='rule-fld3 rounded border-solid border-2 border-black'
+                            className='rule-fld3 rounded border-solid border-2 border-gray-300'
                             value={item.someValue}
                             onChange={e => handleChange(e, i)}
                         />

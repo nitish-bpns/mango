@@ -21,7 +21,7 @@
 .products,
 .mango {
   /* display: flex; */
-  height: 90vh;
+  height: auto;
   /* align-items: center;
   justify-content: center; */
   /* font-size: 3rem; */
@@ -29,7 +29,8 @@
   float: right;
   padding: 0% 0 0 0%;
   /* background-color: rgb(219 234 254 / var(--tw-bg-opacity)); */
-  background-color: rgb(219 234 254);
+  /* background-color: rgb(219 234 254);*/
+  background-color: #f5f8fa;
 }
 
 .reports {
@@ -46,7 +47,7 @@
 
 .home {
   /* display: flex; */
-  height: 90vh;
+  height: auto;
   /* align-items: center;
   justify-content: center; */
   /* font-size: 3rem; */
@@ -54,16 +55,18 @@
   float: right;
   padding: 0 0 0 0%;
   margin: -1.6% 0 0 0;
-  background-color: rgb(219 234 254 / var(--tw-bg-opacity));
+  /* background-color: rgb(219 234 254 / var(--tw-bg-opacity)); */
 }
 
 .userDetail {
   /* display: flex; */
-  height: 90vh;
+  height: auto;
   /* font-size: 3rem; */
   width: 85%;
   float: right;
-  padding: .5% 0 0 1.3%;
+  padding: .5% 1% 0 1.3%;
+  /* background-color: rgb(219 234 254); */
+  background-color: #e1e8ed;
 
 }
 
@@ -73,6 +76,18 @@
 
 .targeting {
   top: 10%;
+}
+
+.signin {
+  height: 100vh;
+  background-color: #e1e8ed;
+  width: 85%;
+  float: right;
+}
+
+.bg-home {
+  background-color: #e1e8ed;
+  height: auto;
 }
 
 /* .p-2 {

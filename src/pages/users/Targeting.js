@@ -67,7 +67,7 @@ function Targeting() {
                 <span className="text-2xl leading-6 font-medium text-black-900"><b>Targeting</b></span>
                 <input
                     type="checkbox"
-                    className='scale-y-150 scale-x-150 mt-6 ml-8'
+                    className='scale-y-150 scale-x-150 mt-6 ml-8 mr-3'
                     checked={isOn.c}
                     onClick={handleInputC}
                 />
@@ -94,7 +94,7 @@ function Targeting() {
                     <IndiTarget />
                 </div>
 
-
+                <br />
                 <div>
                     <h3 className="pt-5 text-xl leading-6 font-medium text-black-900 ">Target users who match these rules</h3>
                 </div>
@@ -118,8 +118,8 @@ function Targeting() {
                                     <input
                                         type="text"
                                         name='someValue'
-                                        placeholder='Enter some value'
-                                        className='rule-fld3-t rounded border-solid border-2 border-black'
+                                        placeholder='Enter Variation'
+                                        className='rule-fld3-t rounded border-solid border-2 border-gray-300'
 
 
                                     />

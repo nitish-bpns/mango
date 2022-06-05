@@ -182,7 +182,7 @@ function Variation() {
                     <option value='cc' >Number</option>
                     <option value='dd' >JSON</option>
                 </select>
-                <div className={styles.mHead2} >This controls the evaluation return type of your flag in your code.
+                <div className={styles.mHead2} >This controls the evaluation return type of your feature in your code.
                 </div>
                 <br />
                 <br />
@@ -261,49 +261,53 @@ function Variation() {
 
 
                         <h2 className="text-xl leading-7 font-medium text-gray-900 mt-4">Default variations</h2>
-                        <div className={styles.defVar}>
-                            <div className={styles.onBtn}>
-                                <button
-                                    type="button"
-                                    className="bg-green-400 inline-flex items-center px-2 py-2.5 -mt-1 -ml-2
-                          border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 "
-                                >
-                                    ON
-                                </button>
-                            </div>
-                            <div className={styles.varOneT}>
 
+
+                        <div style={{ display: "flex", margin: '2% 4% 0 0%' }}>
+                            <button
+                                type="button"
+                                className="bg-green-400 inline-flex items-center px-2 py-2.5
+                          border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 "
+                            >
+                                ON
+                            </button>
+                            <span>
                                 <select
                                     id="country"
                                     name="country"
                                     autoComplete="country-name"
-                                    className="rounded border-solid border-2 border-black mt-4 -ml-3 relative block w-full rounded-none bg-transparent sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-grey px-2 py-2 "
+                                    className="rounded border-solid w-80 border-2 border-black relative block rounded-none bg-transparent sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-grey px-2 py-2 "
                                 >
                                     <option>True</option>
                                     <option>False</option>
                                 </select>
-                            </div>
-                            <div className={styles.offBtn}>
+                            </span>
+                            <span style={{ display: "flex" }}>
                                 <button
                                     type="button"
-                                    className="bg-red-500 inline-flex items-center px-1.5 py-2.5 -ml-1  border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 "
+                                    className="ml-60 bg-red-500 inline-flex items-center px-1.5 py-2.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 "
                                 >
                                     OFF
                                 </button>
-                            </div>
-                            <div className={styles.varTwoT}>
-                                <select
-                                    id="country"
-                                    name="country"
-                                    autoComplete="country-name"
-                                    className="rounded border-solid border-2 border-black mt-4 -ml-3 relative block w-full rounded-none bg-transparent sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-grey px-2 py-2 "
-                                >
-                                    <option>False</option>
-                                    <option>True</option>
-                                </select>
-                            </div>
+                                <span>
+                                    <select
+                                        id="country"
+                                        name="country"
+                                        autoComplete="country-name"
+                                        className="rounded border-solid border-2 w-80 border-black relative block w-full rounded-none bg-transparent sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-grey px-2 py-2 "
+                                    >
+                                        <option>False</option>
+                                        <option>True</option>
+                                    </select>
+                                </span>
+
+                            </span>
+
 
                         </div>
+
+
+
                         <br /><br />
                     </div>
 
@@ -397,23 +401,21 @@ function Variation() {
                             <br />
                             <h2 className="text-xl leading-7 font-medium text-gray-900 mt-4">Default variations</h2>
 
-                            <div className={styles.defVar}>
-                                <div className={styles.onBtn}>
-                                    <button
-                                        type="button"
-                                        className="bg-green-400 inline-flex items-center px-2 py-2.5 -mt-1 -ml-2
+                            <div style={{ display: "flex", margin: '2% 4% 0 0%' }}>
+                                <button
+                                    type="button"
+                                    className="bg-green-400 inline-flex items-center px-2 py-2.5
                           border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 "
-                                    >
-                                        ON
-                                    </button>
-                                </div>
-                                <div className={styles.varOneT}>
-
+                                >
+                                    ON
+                                </button>
+                                <span>
                                     <select
-                                        type='option'
+                                        id="country"
+                                        name="country"
                                         autoComplete="country-name"
-                                        className="rounded border-solid border-2 border-black mt-4 -ml-3 relative block w-full rounded-none bg-transparent sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-grey px-2 py-2 " >
-
+                                        className="rounded border-solid w-80 border-2 border-black relative block rounded-none bg-transparent sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-grey px-2 py-2 "
+                                    >
                                         {stringList.map((item, i) => {
                                             return (
                                                 <option>Variation {i + 1}</option>
@@ -421,33 +423,35 @@ function Variation() {
                                             )
                                         })}
                                     </select>
-
-                                </div>
-
-                                <div className={styles.offBtn}>
+                                </span>
+                                <span style={{ display: "flex" }}>
                                     <button
                                         type="button"
-                                        className="bg-red-500 inline-flex items-center px-1.5 py-2.5 -ml-1  border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 "
+                                        className="ml-60 bg-red-500 inline-flex items-center px-1.5 py-2.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 "
                                     >
                                         OFF
                                     </button>
-                                </div>
-                                <div className={styles.varTwoT}>
+                                    <span>
+                                        <select
+                                            id="country"
+                                            name="country"
+                                            autoComplete="country-name"
+                                            className="rounded border-solid border-2 w-80 border-black relative block w-full rounded-none bg-transparent sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-grey px-2 py-2 "
+                                        >
+                                            {stringList.map((item, i) => {
+                                                return (
+                                                    <option>Variation {i + 1}</option>
 
-                                    <select
-                                        type='option'
-                                        className="rounded border-solid border-2 border-black mt-4 -ml-3 relative block w-full rounded-none bg-transparent sm:text-sm border-gray-300 rounded-sm border-solid border-2 border-grey px-2 py-2 "
-                                    >
+                                                )
+                                            })}
+                                        </select>
+                                    </span>
 
-                                        {stringList.map((item, i) => {
-                                            return (
-                                                <option>Variation {i + 1}</option>
+                                </span>
 
-                                            )
-                                        })}
-                                    </select>
-                                </div>
+
                             </div>
+
                             <br /><br />
 
                         </div>

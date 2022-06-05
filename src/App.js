@@ -24,7 +24,7 @@ function App() {
         <Route exact path='/products/*' element={<Products />}></Route>
         <Route path='/mango/*' element={<Mango />}></Route>
         <Route path='/userDetail' element={<UserDetail />}></Route>
-        {/* <Route path='/userDetail/:item.name/*' element={<UserDetail />}></Route> */}
+        <Route path='/userDetail/:index/*' element={<UserDetail />}></Route>
         {/* <Route path='/userDetails/targeting' render={() => (<Targeting />)}></Route> */}
 
       </Routes>

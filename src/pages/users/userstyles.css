@@ -3,7 +3,7 @@
 }
 
 .indit {
-    width: 98%;
+    width: 100%;
     /* display: flex;
     flex-wrap: wrap; */
 }
@@ -20,15 +20,15 @@
 
 .styles_chip-input__3aumB {
     box-shadow: 0 0 0 0.2rem transparent;
-    border: 2px solid #a59f9f;
+    border: 2px solid #d1c9c9;
     transition: border 0.15s linear, box-shadow 0.15s linear;
-    background-color: white !important;
+    background-color: #e1e8ed !important;
     border-radius: 5px !important;
 }
 
 .m-0 {
     margin: 5% 0 4% 5%;
-    border: 2px solid;
+    border: 1px solid rgb(193, 193, 193);
     border-radius: 5px;
 }
 
@@ -45,6 +45,23 @@
     border: 1px solid var(--react-chip-input__chip-border-color, var(--gray, rgba(0, 0, 0, 0.25)));
     border-radius: 8px;
     height: 27px;
-    background-color: var(--react-chip-input__chip-bg-color, #eaeaea);
+    background-color: white;
     transition: box-shadow 0.15s linear, background-color 0.15s linear, border 0.15s linear;
+}
+
+.outer {
+    display: flex;
+    font-size: 2.5rem !important;
+    letter-spacing: 1.8px !important;
+    margin-top: 1.5rem;
+}
+
+.current-t {
+    margin-top: 1.8rem;
+}
+
+.lineT {
+    height: 1.5px;
+    background-color: rgb(155, 155, 155);
+    color: black;
 }
